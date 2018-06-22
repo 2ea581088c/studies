@@ -32,29 +32,22 @@ public class Sort {
     public static int removeDups(int[] arr) {
         // initialise int variables
         int uniques = 0;
-        int currentNum = 0;
-        boolean isDuplicate = false;
+        int currentNum;
 
-        for (int i = 0; i < arr.length; i++) {
-            // initialise currentNum to arr[0]
-            if (i == 0) {
-                currentNum = arr[i];
-                uniques ++;
-            } else {
+        // check first number within array outside of loop to reduce no. of comparisons
+        if (arr.length >= 1) {
+            currentNum = arr[0];
+            uniques ++;
+
+            // loop to check each number within array
+            for (int i = 1; i < arr.length; i++) {
                 // check current number in array and change it to 0 if a duplicate
-                if (currentNum != arr[i] && arr[i] != 0) {
+                if (currentNum != arr[i]) {
                     currentNum = arr[i];
                     uniques ++;
                     swap(arr, i, uniques - 1);
-                    // if previous duplicates present, then do a swap
-                    if (isDuplicate) {
-                        isDuplicate = false;
-
-                        currentNum = 0;
-                    }
                 } else {
                     arr[i] = 0;
-                    isDuplicate = true;
                 }
             }
         }
@@ -252,7 +245,7 @@ public class Sort {
 
     public static void main(String[] arr) {
         // testing for problem 7
-        int[] array = {2, 5, 5, 5, 10, 12, 12};
+        int[] array = {0,0,0,0,1,1,2,3,3,3};
         printArray(array);
         System.out.println(removeDups(array));
         printArray(array);
