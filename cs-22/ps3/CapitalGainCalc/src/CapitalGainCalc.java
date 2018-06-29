@@ -25,22 +25,44 @@ public class CapitalGainCalc {
     }
 
     /* Put your fields/instance variables below. */
-
+    private int totalShares;
+    private LLQueue<Purchase> q;
     
     public CapitalGainCalc() {
         /* Put your implementation of the constructor below. */
-
+        this.totalShares = 0;
+        this.q = new LLQueue<Purchase>();
     }
 
     public void processPurchase(int numShares, int price) {
         /* Put your implementation of this method below. */
-
+        q.insert(new Purchase(numShares, price));
+        totalShares += numShares;
     }
 
     public int processSale(int numSharesToSell, int price) {
         /* Replace the line below with your implementation of this method. */
+        if (numSharesToSell > totalShares) {
+            throw new IllegalArgumentException("**You don't have " + numSharesToSell + " to sell**");
+        }
 
-        return 0;
+        int gain = numSharesToSell * price;
+        Purchase sold = null;
+
+        while (numSharesToSell > 0) {
+            sold = q.remove();
+            numSharesToSell -= sold.numShares;
+            gain -= sold.numShares * sold.price;
+            totalShares -= sold.numShares;
+        }
+        // add back new Purchase object if excess shares remaining
+        if (numSharesToSell < 0) {
+            numSharesToSell *= -1;
+            processPurchase(numSharesToSell, sold.price);
+            gain += numSharesToSell * sold.price;
+        }
+
+        return gain;
     }
 
     public static void main(String[] args) {
