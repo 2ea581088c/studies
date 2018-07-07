@@ -52,6 +52,11 @@ public class LinkedTree {
      * binary search tree. You may assume that there are no duplicates – i.e., no repeated keys.
      */
 
+    // implementation : recursively calls leftHalf() and rightHalf() to insert additional nodes into the tree
+    // leftHalf() - selects the middle element within range of elements - if an even number of elements is given it
+    //              will select the smaller of the two middle elements
+    // rightHalf() - selects the larger of the two middle elements where there are an even number of elements
+
     public LinkedTree(int[] keys, Object[] dataItems) {
         if (keys.length == 0) {
             root = null;
@@ -65,11 +70,11 @@ public class LinkedTree {
             root = new Node(keys[(keys.length - 1) / 2], dataItems[(dataItems.length - 1) / 2]);
 
             // recursively insert middle of range of remaining keys with helper method
+            // to insert the first and last elements, need to consider if there is an available element between
+            // [-1, 1] and [keys.length - 2, keys.length]
             leftHalf(this, keys, dataItems, -1, (keys.length - 1) / 2);
             rightHalf(this, keys, dataItems, (keys.length - 1) / 2, keys.length);
-
         }
-
     }
 
     // helper function that inserts one smaller and one larger key than root node
@@ -84,7 +89,7 @@ public class LinkedTree {
             diff /= 2;
             tree.insert(keys[diff + first], dataItems[diff + first]);
 
-            if (diff > 1)
+            if (diff > 1)   // if any more remaining elements to insert within the range
                 leftHalf(tree, keys, dataItems, first, diff + first);
             if (last - (diff + first) > 1)
                 rightHalf(tree, keys, dataItems, diff + first, last);
@@ -585,8 +590,10 @@ public class LinkedTree {
         tree.levelOrderPrint();
         System.out.println();*/
 
-        int[] keys = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
-        Object[] dataItems = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+//        int[] keys = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+//        Object[] dataItems = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+//        int[] keys = {1};
+//        Object[] dataItems = {1};
 
         LinkedTree tree2 = new LinkedTree(keys, dataItems);
         tree2.levelOrderPrint();

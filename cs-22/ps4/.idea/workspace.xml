@@ -15,8 +15,8 @@
       <file leaf-file-name="LinkedTree.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LinkedTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="865">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+            <state relative-caret-position="166">
+              <caret line="65" column="61" lean-forward="true" selection-start-line="65" selection-start-column="61" selection-end-line="65" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1052#1053#0" expanded="true" />
@@ -44,7 +44,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="377" />
     <option name="y" value="70" />
     <option name="width" value="1317" />
@@ -195,25 +195,25 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/LinkedTree.java</url>
-          <line>412</line>
+          <line>417</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/LinkedTree.java</url>
-          <line>590</line>
+          <line>597</line>
           <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/LinkedTree.java</url>
-          <line>591</line>
+          <line>598</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/LinkedTree.java</url>
-          <line>67</line>
+          <line>74</line>
           <properties />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
@@ -300,8 +300,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LinkedTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="865">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="166">
+          <caret line="65" column="61" lean-forward="true" selection-start-line="65" selection-start-column="61" selection-end-line="65" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1052#1053#0" expanded="true" />
